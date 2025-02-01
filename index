@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón Psicodélico</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            margin: 0;
+        }
+        .psy-button {
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff0000, #00ff00);
+            background-size: 400% 400%;
+            animation: gradientAnimation 2s infinite alternate;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transition: transform 0.2s;
+        }
+        .psy-button:hover {
+            transform: scale(1.1);
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        video {
+            display: none;
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button class="psy-button" onclick="playVideo()">¡KRGL1!</button>
+    <video id="psy-video" controls>
+        <source src="9d8c1ebb-cbf3-4dcf-be2f-1adefbf23143.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+    <script>
+        function playVideo() {
+            var video = document.getElementById("psy-video");
+            video.style.display = "block";
+            video.play();
+        }
+    </script>
+</body>
+</html>
