@@ -1,62 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botón Psicodélico</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: black;
-            margin: 0;
-            flex-direction: column;
-        }
-        .image-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s;
-            border-radius: 20px;
-        }
-        .image-button:hover {
-            transform: scale(1.05);
-        }
-        .image-button img {
-            width: 300px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
-        }
-        video {
-            display: none;
-            max-width: 80%;
-            max-height: 80%;
-            margin-top: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KRGL1 - Bendita Parka</title>
+  <style>
+    body {
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+      font-family: sans-serif;
+    }
+    .reaper-img {
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .reaper-img:hover {
+      transform: scale(1.05);
+    }
+    audio {
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-    <button class="image-button" onclick="playVideo()">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..." alt="KRGL1 Parca">
-    </button>
+  <h1>KRGL1 - Bendita Parka</h1>
 
-    <video id="psy-video" controls>
-        <source src="https://github.com/usuario/repositorio/raw/main/Bendita_parka.mp3" type="video/mp4">
-        Tu navegador no soporta el video.
-    </video>
+  <!-- Imagen que hace de botón -->
+  <img src="KRGL1-parka.png" alt="Parca psicodélica" class="reaper-img" onclick="playAudio()" />
 
-    <script>
-        function playVideo() {
-            var video = document.getElementById("psy-video");
-            video.style.display = "block";
-            video.play();
-        }
-    </script>
+  <!-- Reproductor oculto -->
+  <audio id="audio-player" controls>
+    <source src="https://tuusuario.github.io/turepo/Bendita%20parka.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+
+  <script>
+    function playAudio() {
+      const audio = document.getElementById("audio-player");
+      audio.style.display = "block";
+      audio.play();
+    }
+  </script>
 
 </body>
 </html>
