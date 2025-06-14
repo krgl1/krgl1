@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KRGL1 - Bendita Parka</title>
+  <meta charset="UTF-8">
+  <title>Música</title>
   <style>
     body {
-      background-color: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      color: white;
-      font-family: sans-serif;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
     }
-    .reaper-img {
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    .button {
+      display: block;
+      width: 250px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
       cursor: pointer;
-      transition: transform 0.2s;
+      transition: background 0.3s;
+      text-decoration: none;
     }
-    .reaper-img:hover {
-      transform: scale(1.05);
+    .button:hover {
+      background: #444;
     }
-    audio {
-      margin-top: 20px;
+    .audio-player {
+      margin: 30px auto 50px auto;
       display: none;
     }
   </style>
 </head>
 <body>
+  <button class="button" onclick="playAudio('Bendita parka.mp3')">Bendita parka</button>
+  <button class="button" onclick="playAudio('violinnuremberg.mp3')">violinnuremberg</button>
 
-  <h1>KRGL1 - Bendita Parka</h1>
-
-  <!-- Imagen que hace de botón -->
-  <img src="KRGL1-parka.png" alt="Parca psicodélica" class="reaper-img" onclick="playAudio()" />
-
-  <!-- Reproductor oculto -->
-  <audio id="audio-player" controls>
-    <source src="https://krgl1.github.io/Bendita%20parka.mp3" type="audio/mpeg">
-    Tu navegador no soporta el audio.
+  <audio id="audioPlayer" class="audio-player" controls>
+    Tu navegador no soporta el elemento <code>audio</code>.
   </audio>
 
   <script>
-    function playAudio() {
-      const audio = document.getElementById("audio-player");
-      audio.style.display = "block";
-      audio.play();
+    function playAudio(file) {
+      const player = document.getElementById('audioPlayer');
+      player.src = file;
+      player.style.display = 'block';
+      player.play();
     }
   </script>
-
 </body>
 </html>
