@@ -2,53 +2,48 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Música</title>
+  <title>Reproductor de MP3</title>
   <style>
     body {
       background: #000;
       color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
     }
-    .button {
-      display: block;
-      width: 250px;
-      margin: 30px auto;
-      padding: 20px;
+    button {
       background: #222;
       color: #fff;
       border: none;
-      border-radius: 8px;
+      padding: 15px 40px;
+      margin: 10px;
       font-size: 1.2em;
       cursor: pointer;
-      transition: background 0.3s;
-      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s;
     }
-    .button:hover {
+    button:hover {
       background: #444;
     }
-    .audio-player {
-      margin: 30px auto 50px auto;
+    audio {
       display: none;
     }
   </style>
 </head>
 <body>
-  <button class="button" onclick="playAudio('Bendita parka.mp3')">Bendita parka</button>
-  <button class="button" onclick="playAudio('violinnuremberg.mp3')">violinnuremberg</button>
-  <button class="button" onclick="playAudio('Float number.mp3')">Float number</button>
-
-  <audio id="audioPlayer" class="audio-player" controls>
-    Tu navegador no soporta el elemento <code>audio</code>.
-  </audio>
-
+  <button onclick="playAudio('Bendita parka.mp3')">Bendita parka</button>
+  <button onclick="playAudio('Float_number.mp3')">Float_number</button>
+  <button onclick="playAudio('Not Insane.mp3')">Not Insane</button>
+  <audio id="audioPlayer" controls></audio>
   <script>
-    function playAudio(file) {
-      const player = document.getElementById('audioPlayer');
-      player.src = file;
-      player.style.display = 'block';
-      player.play();
+    function playAudio(filename) {
+      const audio = document.getElementById('audioPlayer');
+      audio.src = filename;
+      audio.style.display = 'block';
+      audio.play();
     }
   </script>
 </body>
